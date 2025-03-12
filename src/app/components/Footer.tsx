@@ -20,6 +20,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
+      <div>OVDJE INEGRISAT GOOGLE LOKACIJU POSLA</div>
     </footer>
   );
 };
