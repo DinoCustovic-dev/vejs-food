@@ -21,19 +21,19 @@ const MenuSection: React.FC<MenuSectionProps> = ({ onClose }) => {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
           <ProductCard
             image='/images/vejs-slikanpr2.jpeg'
-            title='Piletina sa salatom'
+            name='Piletina sa salatom'
             description='Sveža piletina sa kukuruzom i prelivom.'
             price={10}
           />
           <ProductCard
             image='/images/vejs-slikanpr1.jpeg'
-            title='Doner'
+            name='Doner'
             description='Ukusni doner sa specijalnim sosom.'
             price={8}
           />
           <ProductCard
             image='/images/vejs-slikanpr3.jpeg'
-            title='Specijalitet sa roštilja'
+            name='Specijalitet sa roštilja'
             description='Roštilj mix sa prilozima.'
             price={15}
           />
