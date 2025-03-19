@@ -3,6 +3,10 @@
 import React, { useState } from 'react';
 import { FaBars, FaShoppingCart } from 'react-icons/fa';
 
+const ShoppingCartIcon = FaShoppingCart as React.ComponentType<{
+  className?: string;
+}>;
+
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -36,18 +40,12 @@ const NavBar = () => {
           </a>
         </li>
         <li>
-          {React.createElement(FaShoppingCart as React.ElementType, {
-            className:
-              'text-2xl cursor-pointer hover:text-gray-200 transition-colors',
-          })}
+          <ShoppingCartIcon className='text-2xl cursor-pointer hover:text-gray-200 transition-colors' />
         </li>
       </ul>
 
       <div className='flex items-center md:hidden space-x-4'>
-        {React.createElement(FaShoppingCart as React.ElementType, {
-          className:
-            'text-2xl cursor-pointer hover:text-gray-200 transition-colors',
-        })}
+        <ShoppingCartIcon className='text-2xl cursor-pointer hover:text-gray-200 transition-colors' />
         <button
           onClick={toggleMenu}
           className='hover:text-gray-200 transition-colors'
