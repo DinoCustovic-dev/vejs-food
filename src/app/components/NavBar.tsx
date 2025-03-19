@@ -6,6 +6,7 @@ import { FaBars, FaShoppingCart } from 'react-icons/fa';
 const ShoppingCartIcon = FaShoppingCart as React.ComponentType<{
   className?: string;
 }>;
+const BarsIcon = FaBars as React.ComponentType<{ className?: string }>;
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,7 +51,7 @@ const NavBar = () => {
           onClick={toggleMenu}
           className='hover:text-gray-200 transition-colors'
         >
-          <FaBars className='text-2xl' />
+          <BarsIcon className='text-2xl' />
         </button>
       </div>
 
