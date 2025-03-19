@@ -36,7 +36,7 @@ const NavBar = () => {
           </a>
         </li>
         <li>
-          {React.createElement(FaShoppingCart, {
+          {React.createElement(FaShoppingCart as React.ElementType, {
             className:
               'text-2xl cursor-pointer hover:text-gray-200 transition-colors',
           })}
@@ -44,7 +44,7 @@ const NavBar = () => {
       </ul>
 
       <div className='flex items-center md:hidden space-x-4'>
-        {React.createElement(FaShoppingCart, {
+        {React.createElement(FaShoppingCart as React.ElementType, {
           className:
             'text-2xl cursor-pointer hover:text-gray-200 transition-colors',
         })}
