@@ -18,9 +18,12 @@ const HeroSection = () => {
           <p className='text-xl md:text-2xl mb-8'>
             Pite, roštilj i doneri na jednom mjestu
           </p>
-          <button className='bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded'>
+          <a
+            href='#menu'
+            className='bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded inline-block'
+          >
             Pogledaj meni
-          </button>
+          </a>
         </div>
       </div>
     </div>
