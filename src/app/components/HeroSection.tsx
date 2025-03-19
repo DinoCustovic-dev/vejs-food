@@ -10,14 +10,15 @@ const HeroSection = () => {
     >
       <div className='flex flex-col h-full bg-black bg-opacity-50'>
         <NavBar />
-        <div className='flex-grow container mx-auto flex flex-col justify-center px-6 text-white'>
-          <h1 className='text-4xl md:text-6xl font-bold mb-4'>
-            Najbolje pite u gradu od 1983
+
+        <div className='flex-grow flex flex-col justify-center items-center text-center px-4 text-white'>
+          <h1 className='text-4xl md:text-6xl font-bold mb-6'>
+            Vejs pite od 1983
           </h1>
-          <p className='text-lg md:text-2xl mb-6'>
-            Pite, roštilj i doneri na jednom mestu
+          <p className='text-xl md:text-2xl mb-8'>
+            Pite, roštilj i doneri na jednom mjestu
           </p>
-          <button className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded w-max'>
+          <button className='bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded'>
             Pogledaj meni
           </button>
         </div>
