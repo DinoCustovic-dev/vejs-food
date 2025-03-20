@@ -1,8 +1,14 @@
-import React from 'react';
+'use client';
 
+import React, { useState } from 'react';
+
+import MenuDrawer from './MenuDrawer';
 import NavBar from './NavBar';
 
 const HeroSection = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const toggleDrawer = () => setIsDrawerOpen((prev) => !prev);
+
   return (
     <div
       className='relative h-screen bg-cover bg-center'
@@ -18,14 +24,26 @@ const HeroSection = () => {
           <p className='text-xl md:text-2xl mb-8'>
             Pite, roštilj i doneri na jednom mjestu
           </p>
-          <a
-            href='#menu'
-            className='bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded inline-block'
-          >
-            Pogledaj meni
-          </a>
+          <div className='flex space-x-4'>
+            <a
+              href='#menu'
+              className='bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded inline-block'
+            >
+              Pogledaj meni
+            </a>
+            {/* Dugme za otvaranje jelovnika */}
+            <button
+              onClick={toggleDrawer}
+              className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded inline-block'
+            >
+              Jelovnik
+            </button>
+          </div>
         </div>
       </div>
+
+      {/* MenuDrawer */}
+      <MenuDrawer isOpen={isDrawerOpen} onClose={toggleDrawer} />
     </div>
   );
 };
