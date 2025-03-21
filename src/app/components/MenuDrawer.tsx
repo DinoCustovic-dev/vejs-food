@@ -35,7 +35,7 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({ isOpen, onClose }) => {
     <>
       {isOpen && (
         <div
-          className='fixed inset-0 bg-black bg-opacity-50 z-40'
+          className='fixed inset-0 bg-black bg-opacity-50 z-[40]'
           onClick={onClose}
         ></div>
       )}
@@ -43,7 +43,7 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({ isOpen, onClose }) => {
       <div
         className={`fixed top-0 right-0 w-80 h-full bg-white shadow-lg transform transition-transform ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
-        } z-50 overflow-y-auto`}
+        } z-[50] overflow-y-auto`}
       >
         <div className='p-4 border-b flex justify-between items-center'>
           <h2 className='text-xl font-bold'>Jelovnik</h2>
@@ -182,54 +182,54 @@ const MenuDrawer: React.FC<MenuDrawerProps> = ({ isOpen, onClose }) => {
             ))}
           </ul>
 
-          {/* PRILOZI */}
-          <h3 className='text-lg font-bold text-gray-700'>Dodatni prilozi</h3>
-          <ul className='space-y-2'>
-            {[
-              { id: '19', title: 'Pomfrit', price: 3.0 },
-              { id: '20', title: 'Kajmak', price: 1.0 },
-              { id: '21', title: 'Senf', price: 0.5 },
-              { id: '22', title: 'Majoneza', price: 0.5 },
-              { id: '23', title: 'Kečap', price: 0.5 },
-            ].map((item) => (
-              <MenuItem key={item.id} item={item} onAdd={handleAddToCart} />
-            ))}
-          </ul>
-
           {/* DONERI */}
           <h3 className='text-lg font-bold text-gray-700'>Doneri</h3>
           <ul className='space-y-2'>
             {[
               {
-                id: '24',
+                id: '19',
                 title: 'Doner oval',
                 price: 8.0,
                 addons: defaultAddons,
               },
               {
-                id: '25',
+                id: '20',
                 title: 'Doner veliki',
                 price: 8.0,
                 addons: defaultAddons,
               },
               {
-                id: '26',
+                id: '21',
                 title: 'Doner srednji',
                 price: 7.0,
                 addons: defaultAddons,
               },
               {
-                id: '27',
+                id: '22',
                 title: 'Doner mali',
                 price: 5.5,
                 addons: defaultAddons,
               },
               {
-                id: '28',
+                id: '23',
                 title: 'Doner tortilja',
                 price: 6.0,
                 addons: defaultAddons,
               },
+            ].map((item) => (
+              <MenuItem key={item.id} item={item} onAdd={handleAddToCart} />
+            ))}
+          </ul>
+
+          {/* DODATNI PRILOZI */}
+          <h3 className='text-lg font-bold text-gray-700'>Dodatni prilozi</h3>
+          <ul className='space-y-2'>
+            {[
+              { id: '24', title: 'Pomfrit', price: 3.0 },
+              { id: '25', title: 'Kajmak', price: 1.0 },
+              { id: '26', title: 'Senf', price: 0.5 },
+              { id: '27', title: 'Majoneza', price: 0.5 },
+              { id: '28', title: 'Kečap', price: 0.5 },
             ].map((item) => (
               <MenuItem key={item.id} item={item} onAdd={handleAddToCart} />
             ))}

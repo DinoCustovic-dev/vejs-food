@@ -17,14 +17,12 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    // Vanjski kontejner koji hvata klik i zatvara modal
     <div
-      className='fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-center items-center'
-      onClick={onClose} // ✅ Klik izvan modala sada sigurno zatvara modal
+      className='fixed inset-0 bg-black bg-opacity-50 z-[60] flex justify-center items-center'
+      onClick={onClose} // ✅ Klik izvan modala zatvara modal
     >
-      {/* Modal (klik unutar njega neće zatvoriti modal) */}
       <div
-        className='bg-white rounded-lg shadow-lg w-96 p-6 relative'
+        className='bg-white rounded-lg shadow-lg w-96 p-6 relative z-[70]'
         onClick={(e) => e.stopPropagation()} // ✅ Sprečava zatvaranje na klik unutar modala
       >
         {/* Dugme za zatvaranje */}
