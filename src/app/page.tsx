@@ -8,6 +8,7 @@ import Footer from '@/app/components/Footer';
 import Gallery from '@/app/components/Gallery';
 import HeroSection from '@/app/components/HeroSection';
 import ProductCard from '@/app/components/ProductCard';
+import { CartProvider } from '@/context/CartContext';
 
 /**
  * SVGR Support
@@ -20,30 +21,35 @@ import ProductCard from '@/app/components/ProductCard';
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <section id='menu' className='p-8 grid grid-cols-1 md:grid-cols-3 gap-6'>
-        <ProductCard
-          image='/images/vejs-slikanpr2.jpeg'
-          title='Piletina sa salatom'
-          description='Sveža piletina sa kukuruzom i prelivom.'
-          price={10}
-        />
-        <ProductCard
-          image='/images/vejs-slikanpr1.jpeg'
-          title='Doner'
-          description='Ukusni doner sa specijalnim sosom.'
-          price={8}
-        />
-        <ProductCard
-          image='/images/vejs-slikanpr3.jpeg'
-          title='Specijalitet sa roštilja'
-          description='Roštilj mix sa prilozima.'
-          price={15}
-        />
-      </section>
-      <Gallery />
-      <ContactForm />
-      <Footer />
+      <CartProvider>
+        <HeroSection />
+        <section
+          id='menu'
+          className='p-8 grid grid-cols-1 md:grid-cols-3 gap-6'
+        >
+          <ProductCard
+            image='/images/vejs-slikanpr2.jpeg'
+            title='Piletina sa salatom'
+            description='Sveža piletina sa kukuruzom i prelivom.'
+            price={10}
+          />
+          <ProductCard
+            image='/images/vejs-slikanpr1.jpeg'
+            title='Doner'
+            description='Ukusni doner sa specijalnim sosom.'
+            price={8}
+          />
+          <ProductCard
+            image='/images/vejs-slikanpr3.jpeg'
+            title='Specijalitet sa roštilja'
+            description='Roštilj mix sa prilozima.'
+            price={15}
+          />
+        </section>
+        <Gallery />
+        <ContactForm />
+        <Footer />
+      </CartProvider>
     </>
   );
 }
