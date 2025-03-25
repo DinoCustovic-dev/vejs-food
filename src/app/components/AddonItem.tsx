@@ -15,22 +15,22 @@ const AddonItem: React.FC<AddonItemProps> = ({ itemId, addon }) => {
   const { updateAddonQuantity } = useCart();
 
   return (
-    <div className='flex justify-between items-center px-4 py-1 border-b'>
+    <div className='flex justify-between items-center px-4 py-2 border-b border-gray-200'>
       {/* Naziv priloga */}
-      <span className='text-sm'>{addon.title}</span>
+      <span className='text-sm text-gray-800'>{addon.title}</span>
 
       {/* Brojčanik za prilog */}
-      <div className='flex items-center space-x-2'>
+      <div className='flex items-center space-x-2 bg-gray-100 rounded-full'>
         <button
           onClick={() => updateAddonQuantity(itemId, addon.id, false)}
-          className='px-2 py-1 bg-gray-300 hover:bg-gray-400 rounded'
+          className='px-3 py-1 text-gray-600 hover:text-black rounded-full transition-colors'
         >
           −
         </button>
-        <span>{addon.quantity}</span>
+        <span className='font-semibold text-gray-800'>{addon.quantity}</span>
         <button
           onClick={() => updateAddonQuantity(itemId, addon.id, true)}
-          className='px-2 py-1 bg-gray-300 hover:bg-gray-400 rounded'
+          className='px-3 py-1 text-gray-600 hover:text-black rounded-full transition-colors'
         >
           +
         </button>
