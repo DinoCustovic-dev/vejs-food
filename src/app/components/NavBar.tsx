@@ -43,40 +43,47 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className='flex justify-between items-center px-6 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg relative'>
-        <div className='text-2xl font-bold'>Vejs</div>
+      <nav className='flex justify-between items-center px-6 py-4 bg-gradient-to-r from-stone-800 to-stone-600 text-white shadow-lg relative'>
+        <div className='text-2xl font-bold tracking-wider'>Vejs</div>
 
         <ul className='hidden md:flex space-x-8 items-center'>
           <li>
-            <a href='#home' className='hover:text-gray-200'>
+            <a href='#home' className='hover:text-stone-300 transition-colors'>
               Početna
             </a>
           </li>
           <li>
-            <a href='#menu' className='hover:text-gray-200'>
+            <a href='#menu' className='hover:text-stone-300 transition-colors'>
               Proizvodi
             </a>
           </li>
           <li>
-            <a href='#gallery' className='hover:text-gray-200'>
+            <a
+              href='#gallery'
+              className='hover:text-stone-300 transition-colors'
+            >
               Galerija
             </a>
           </li>
           <li>
-            <a href='#contact' className='hover:text-gray-200'>
+            <a
+              href='#contact'
+              className='hover:text-stone-300 transition-colors'
+            >
               Kontakt
             </a>
           </li>
-          {/* Dugme za otvaranje jelovnika */}
           <li>
-            <button onClick={toggleDrawer} className='hover:text-gray-200'>
+            <button
+              onClick={toggleDrawer}
+              className='hover:text-stone-300 transition-colors'
+            >
               Jelovnik
             </button>
           </li>
-          {/* Ikonica košarice */}
           <li>
             <ShoppingCartIcon
-              className='text-2xl cursor-pointer hover:text-gray-200'
+              className='text-2xl cursor-pointer hover:text-stone-300 transition-colors'
               onClick={toggleCart}
             />
           </li>
@@ -85,10 +92,13 @@ const NavBar = () => {
         {/* Mobilni meni */}
         <div className='flex items-center md:hidden space-x-4'>
           <ShoppingCartIcon
-            className='text-2xl cursor-pointer hover:text-gray-200'
+            className='text-2xl cursor-pointer hover:text-stone-300 transition-colors'
             onClick={toggleCart}
           />
-          <button onClick={toggleMenu} className='hover:text-gray-200'>
+          <button
+            onClick={toggleMenu}
+            className='hover:text-stone-300 transition-colors'
+          >
             <BarsIcon className='text-2xl' />
           </button>
         </div>
@@ -98,43 +108,42 @@ const NavBar = () => {
             <div className='fixed inset-0 bg-black bg-opacity-50 z-10'></div>
             <div
               ref={menuRef}
-              className='absolute top-16 right-4 bg-white text-black shadow-xl rounded-lg py-2 w-48 z-20'
+              className='absolute top-16 right-4 bg-gradient-to-br from-stone-100 to-stone-200 text-stone-800 shadow-xl rounded-lg py-2 w-48 z-20 border border-stone-300'
             >
               <a
                 href='#home'
-                className='block px-6 py-3 hover:bg-gray-100'
+                className='block px-6 py-3 hover:bg-stone-200 transition-colors'
                 onClick={closeMenu}
               >
                 Početna
               </a>
               <a
                 href='#menu'
-                className='block px-6 py-3 hover:bg-gray-100'
+                className='block px-6 py-3 hover:bg-stone-200 transition-colors'
                 onClick={closeMenu}
               >
                 Proizvodi
               </a>
               <a
                 href='#gallery'
-                className='block px-6 py-3 hover:bg-gray-100'
+                className='block px-6 py-3 hover:bg-stone-200 transition-colors'
                 onClick={closeMenu}
               >
                 Galerija
               </a>
               <a
                 href='#contact'
-                className='block px-6 py-3 hover:bg-gray-100'
+                className='block px-6 py-3 hover:bg-stone-200 transition-colors'
                 onClick={closeMenu}
               >
                 Kontakt
               </a>
-              {/* Dugme za otvaranje jelovnika u mobilnom meniju */}
               <button
                 onClick={() => {
                   closeMenu();
                   toggleDrawer();
                 }}
-                className='block px-6 py-3 hover:bg-gray-100 w-full text-left'
+                className='block px-6 py-3 hover:bg-stone-200 transition-colors w-full text-left'
               >
                 Jelovnik
               </button>
