@@ -12,11 +12,8 @@ import { CartProvider } from '@/context/CartContext';
 // !STARTERCONF Look at @/constant/config to change them
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: {
-    default: siteConfig.title,
-    template: `%s | ${siteConfig.title}`,
-  },
-  description: siteConfig.description,
+  title: 'Vejs',
+  description: 'Najbolja hrana u gradu',
   robots: { index: true, follow: true },
   // !STARTERCONF this is the default favicon, you can generate your own from https://realfavicongenerator.net/
   // ! copy to /favicon folder
