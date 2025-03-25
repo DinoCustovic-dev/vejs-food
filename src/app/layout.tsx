@@ -53,10 +53,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <CartProvider>
-      <html>
+    <html>
+      <CartProvider>
         <body>{children}</body>
-      </html>
-    </CartProvider>
+      </CartProvider>
+    </html>
   );
 }
