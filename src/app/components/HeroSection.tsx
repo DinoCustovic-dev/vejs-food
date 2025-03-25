@@ -24,25 +24,18 @@ const HeroSection = () => {
           <p className='text-xl md:text-2xl mb-8'>
             Pite, roštilj i doneri na jednom mjestu
           </p>
-          <div className='flex space-x-4'>
-            <a
-              href='#menu'
-              className='bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded inline-block'
-            >
-              Pogledaj meni
-            </a>
-            {/* Dugme za otvaranje jelovnika */}
-            <button
-              onClick={toggleDrawer}
-              className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded inline-block'
-            >
-              Jelovnik
-            </button>
-          </div>
+
+          {/* Ostavljeno samo dugme "Jelovnik" koje otvara MenuDrawer */}
+          <button
+            onClick={toggleDrawer}
+            className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded inline-block'
+          >
+            Jelovnik
+          </button>
         </div>
       </div>
 
-      {/* MenuDrawer */}
+      {/* MenuDrawer za pregled svih jela */}
       <MenuDrawer isOpen={isDrawerOpen} onClose={toggleDrawer} />
     </div>
   );

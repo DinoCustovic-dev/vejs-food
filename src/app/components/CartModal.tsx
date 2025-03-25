@@ -4,7 +4,7 @@ import React from 'react';
 
 import { useCart } from '@/context/CartContext';
 
-import CartItem from './CartItem'; // ✅ Ispravan import
+import CartItem from './CartItem';
 
 interface CartModalProps {
   isOpen: boolean;
@@ -14,11 +14,17 @@ interface CartModalProps {
 const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
   const { cartItems } = useCart();
 
-  if (!isOpen) return null; // Ako modal nije otvoren, ne prikazuj ništa
+  if (!isOpen) return null;
 
   return (
-    <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50'>
-      <div className='bg-white rounded-lg shadow-lg w-96 p-6 relative'>
+    <div
+      className='fixed inset-0 bg-black bg-opacity-50 z-[60] flex justify-center items-center'
+      onClick={onClose} // ✅ Klik izvan modala zatvara modal
+    >
+      <div
+        className='bg-white rounded-lg shadow-lg w-96 p-6 relative z-[70]'
+        onClick={(e) => e.stopPropagation()} // ✅ Sprečava zatvaranje na klik unutar modala
+      >
         {/* Dugme za zatvaranje */}
         <button
           onClick={onClose}
@@ -39,13 +45,13 @@ const CartModal: React.FC<CartModalProps> = ({ isOpen, onClose }) => {
           </ul>
         )}
 
-        {/* Dugme za zatvaranje i nastavak kupovine */}
+        {/* Dugme "Naruči" umjesto "Zatvori" */}
         <div className='mt-4 flex justify-end'>
           <button
-            onClick={onClose}
+            onClick={() => void 0}
             className='bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded'
           >
-            Zatvori
+            Naruči
           </button>
         </div>
       </div>
